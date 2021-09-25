@@ -1,0 +1,4 @@
+{
+  "packages": ["infra/*", "apps/*", "packages/*"],
+  "version": "0.0.0"
+}

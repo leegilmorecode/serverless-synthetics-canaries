@@ -1,0 +1,41 @@
+{
+  "name": "@serverless/api",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "prettier": "npx prettier --write .",
+    "build:develop": "sls package --stage=develop",
+    "deploy:develop": "sls deploy --stage=develop",
+    "remove:develop": "sls remove --stage=develop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leegilmorecode/serverless-synthetics-canaries.git"
+  },
+  "author": "Lee Gilmore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leegilmorecode/serverless-synthetics-canaries/issues"
+  },
+  "homepage": "https://github.com/leegilmorecode/serverless-synthetics-canaries#readme",
+  "dependencies": {
+    "aws-sdk": "^2.993.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.83",
+    "@types/node": "^16.9.6",
+    "@types/uuid": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "@typescript-eslint/parser": "^4.31.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "fork-ts-checker-webpack-plugin": "^6.3.3",
+    "prettier": "^2.4.1",
+    "serverless-webpack": "^5.5.4",
+    "ts-loader": "^9.2.6",
+    "webpack": "^5.53.0",
+    "webpack-node-externals": "^3.0.0"
+  }
+}

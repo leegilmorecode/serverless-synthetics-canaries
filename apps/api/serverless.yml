@@ -1,0 +1,43 @@
+service: serverless-api
+variablesResolutionMode: 20210326
+provider:
+  name: aws
+  runtime: nodejs14.x
+  lambdaHashingVersion: 20201221
+  memorySize: 128
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'eu-west-1'}
+plugins:
+  - serverless-webpack # build our serverless solution
+package:
+  individually: true
+  # we exclude the node_modules as this keeps our lambda package size small
+  exclude:
+    - node_modules/**
+functions:
+  # list actors endpoint
+  list-actors:
+    handler: src/actors/list-actors/list-actors.handler
+    memorySize: 128
+    timeout: 3
+    events:
+      - http:
+          path: /actors
+          method: get
+  # get actor endpoint
+  get-actor:
+    handler: src/actors/get-actor/get-actor.handler
+    memorySize: 128
+    timeout: 3
+    events:
+      - http:
+          path: /actors/{id}
+          method: get
+resources:
+custom:
+  # webpack config
+  webpack:
+    webpackConfig: 'webpack.config.js'
+    includeModules:
+      forceExclude:
+        - aws-sdk # we exclude the sdk as it is part of the lambda runtime

@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "@types/node": "^16.9.6",
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "lerna": "^4.0.0",
+    "typescript": "^4.4.3"
+  },
+  "name": "serverless-synthetics-canaries",
+  "description": "Practical example of using CloudWatch Synthetics Canaries to monitor your serverless applications, with visuals and corresponding code repo written in TypeScript and the Serverless Framework.",
+  "scripts": {
+    "build": "lerna run build --stream",
+    "prettier": "npx prettier --write .",
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean"
+  }
+}
