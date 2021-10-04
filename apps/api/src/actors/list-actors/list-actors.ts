@@ -11,11 +11,16 @@ export const handler: APIGatewayProxyHandler = async (): Promise<APIGatewayProxy
 
     console.log(`${correlationId} - ${METHOD} - started`);
 
-    randomErrors(); // generate some random errors
+    randomErrors(); // generate some random errors!
 
     return {
       statusCode: 200,
       body: JSON.stringify(actors),
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Origin': '*',
+      },
     };
   } catch (error: any) {
     console.error(`${METHOD} - error: ${JSON.stringify(error)}`);
@@ -24,6 +29,8 @@ export const handler: APIGatewayProxyHandler = async (): Promise<APIGatewayProxy
       statusCode: 500,
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify('An error as occurred', null, 2),
     };

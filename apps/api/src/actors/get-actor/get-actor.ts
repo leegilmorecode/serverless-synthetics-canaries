@@ -11,12 +11,12 @@ export const handler: APIGatewayProxyHandler = async ({ pathParameters: params }
     const correlationId = uuid();
     console.log(`${correlationId} - ${METHOD} - started`);
 
-    // this would typically have json schema validation around it
+    // this would typically have json schema validation around it but not in our basic example
     const id = Number(params?.id);
 
     console.log(`${correlationId} - ${METHOD} - actor id ${id}`);
 
-    randomErrors(); // generate some random errors
+    randomErrors(); // generate some random errors!
 
     const actor: Actor | undefined = actors.find((actor) => actor.id === id);
 
@@ -27,6 +27,11 @@ export const handler: APIGatewayProxyHandler = async ({ pathParameters: params }
     return {
       statusCode: 200,
       body: JSON.stringify(actor),
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Origin': '*',
+      },
     };
   } catch (error: any) {
     console.error(`${METHOD} - error: ${JSON.stringify(error)}`);
@@ -35,6 +40,8 @@ export const handler: APIGatewayProxyHandler = async ({ pathParameters: params }
       statusCode: 500,
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify('An error as occurred', null, 2),
     };

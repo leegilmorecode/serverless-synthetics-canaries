@@ -2,6 +2,7 @@
 
 /node_modules
 /apps/api/node_modules
+/apps/client/node_modules
 /infra/node_modules
 jspm_packages/
 
@@ -107,7 +108,6 @@ typings/
 
 # dotenv environment variables file
 
-.env
 .env.test
 
 # parcel-bundler cache (https://parceljs.org/)

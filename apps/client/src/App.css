@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+}
+
+.user-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-top: 2px solid rgb(82, 79, 80);
+}
+
+.title-container {
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-top: 2px solid rgb(82, 79, 80);
+}
+
+.info-item {
+  width: 15vw;
+  height: 2vh;
+  padding: 1em;
+  align-self: left; 
+}
+
+.title-item {
+  width: 15vw;
+  font-weight: bolder;
+  height: 2vh;
+  padding: 1em;
+  align-self: left; 
+}
+
+.error-item {
+  font-weight: bolder;
+  font-size: x-large;
+  font-weight: bolder;
+  color: #d60000;
+  padding: 1em;
+}

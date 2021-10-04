@@ -10,27 +10,30 @@
     "test": "./node_modules/.bin/jest",
     "cdk": "./node_modules/.bin/cdk",
     "cdk:list": "./node_modules/.bin/cdk ls",
+    "predeploy:develop": "npm run build",
     "deploy:develop": "./node_modules/.bin/cdk deploy",
     "build:develop": "./node_modules/.bin/cdk synth",
     "remove:develop": "./node_modules/.bin/cdk destroy"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.124.0",
+    "@aws-cdk/assert": "1.125.0",
+    "@aws-cdk/aws-cloudwatch-actions": "^1.125.0",
+    "@aws-cdk/aws-sns": "^1.125.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.125.0",
+    "@aws-cdk/aws-synthetics": "^1.125.0",
+    "@aws-cdk/core": "1.125.0",
     "@types/jest": "^26.0.10",
-    "@types/node": "10.17.27",
-    "@types/source-map-support": "^0.5.4",
-    "aws-cdk": "1.124.0",
+    "@types/node": "^16.10.2",
+    "aws-cdk": "1.125.0",
+    "dotenv": "^10.0.0",
     "jest": "^26.4.2",
+    "serverless-dotenv-plugin": "^3.10.0",
     "ts-jest": "^26.2.0",
+    "ts-loader": "^9.2.6",
     "ts-node": "^9.0.0",
     "typescript": "~3.9.7"
   },
   "dependencies": {
-    "@aws-cdk/aws-cloudwatch-actions": "^1.124.0",
-    "@aws-cdk/aws-sns": "^1.124.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.124.0",
-    "@aws-cdk/aws-synthetics": "^1.124.0",
-    "@aws-cdk/core": "1.124.0",
     "source-map-support": "^0.5.16"
   }
 }

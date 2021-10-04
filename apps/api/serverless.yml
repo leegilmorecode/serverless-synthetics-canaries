@@ -24,6 +24,8 @@ functions:
       - http:
           path: /actors
           method: get
+          cors:
+            origin: '*'
   # get actor endpoint
   get-actor:
     handler: src/actors/get-actor/get-actor.handler
@@ -33,6 +35,8 @@ functions:
       - http:
           path: /actors/{id}
           method: get
+          cors:
+            origin: '*'
 resources:
 custom:
   # webpack config

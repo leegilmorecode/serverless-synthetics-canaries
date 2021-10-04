@@ -1,0 +1,29 @@
+service: serverless-client
+variablesResolutionMode: 20210326
+provider:
+  name: aws
+  runtime: nodejs14.x
+  lambdaHashingVersion: 20201221
+  memorySize: 128
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'eu-west-1'}
+plugins:
+  - serverless-finch # used to deploy our static assets to s3
+resources:
+  Resources:
+    # create an s3 bucket to host our simple website
+    AssetsBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:custom.websiteBucket}
+        VersioningConfiguration:
+          Status: Enabled
+custom:
+  websiteBucket: serverless-client-web-${self:provider.stage}
+  # serverless finsh config
+  client:
+    bucketName: ${self:custom.websiteBucket}
+    manageResources: true
+    distributionFolder: build
+    indexDocument: index.html
+    errorDocument: index.html

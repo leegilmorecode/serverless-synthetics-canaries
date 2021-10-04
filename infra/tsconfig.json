@@ -5,7 +5,7 @@
     "lib": ["es2018"],
     "declaration": true,
     "strict": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "strictNullChecks": true,
     "noImplicitThis": true,
     "alwaysStrict": true,
@@ -17,8 +17,9 @@
     "inlineSources": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
-    "typeRoots": ["./node_modules/@types"]
+    "typeRoots": ["./node_modules/@types"],
+    "baseUrl": "."
   },
   "exclude": ["/node_modules", "cdk.out"],
-  "include": ["/canary/nodejs/node_modules", "./lib"]
+  "include": ["canary/nodejs/node_modules", "visual-canary/nodejs/node_modules", "./lib"]
 }

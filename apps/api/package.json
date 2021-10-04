@@ -4,9 +4,9 @@
   "main": "index.ts",
   "scripts": {
     "prettier": "npx prettier --write .",
-    "build:develop": "sls package --stage=develop",
-    "deploy:develop": "sls deploy --stage=develop",
-    "remove:develop": "sls remove --stage=develop"
+    "build:develop": "./node_modules/.bin/serverless package --stage=develop",
+    "deploy:develop": "./node_modules/.bin/serverless deploy --stage=develop",
+    "remove:develop": "./node_modules/.bin/serverless remove --stage=develop"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "fork-ts-checker-webpack-plugin": "^6.3.3",
     "prettier": "^2.4.1",
+    "serverless": "^2.60.3",
     "serverless-webpack": "^5.5.4",
     "ts-loader": "^9.2.6",
     "webpack": "^5.53.0",
