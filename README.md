@@ -2,7 +2,7 @@
 
 Practical example of using CloudWatch Synthetics Canaries to monitor your serverless applications, with visuals and corresponding code repo written in TypeScript and the Serverless Framework.
 
-This is supporting the following blog post: [Serverless Synthetic Canaries 🚀](/)
+This is supporting the following blog post: [Serverless Synthetic Canaries 🚀](https://leejamesgilmore.medium.com/serverless-synthetic-canaries-7946dc5216ba)
 
 ![architecture](./docs/images/architecture.png)
 
